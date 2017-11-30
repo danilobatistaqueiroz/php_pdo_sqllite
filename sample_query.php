@@ -35,6 +35,7 @@ $sql = "SELECT * FROM `tbUsers` WHERE id=:id";
 $stmt = $conn->prepare($sql, array(\PDO::ATTR_CURSOR => \PDO::CURSOR_FWDONLY));
 $stmt->execute(array(':id' => 1));
 $res = $stmt->fetchAll();
+echo $res[0]["name"] . "\n";
 foreach($res as $r) {
 	echo $r["name"] . "\n";
 }
